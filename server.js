@@ -4,11 +4,17 @@ const cors = require("cors");
 
 const app = express();
 
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
+// connectionString: process.env.DATABASE_URL,
+//   ssl: {
+//     rejectUnauthorized: false
+//   }
+
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
+    host : 'postgresql-acute-94496',
+    user : 'ciprian',
     password : 'admin',
     database : 'predict-app'
   }
