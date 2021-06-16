@@ -56,9 +56,7 @@ app.post("/register", (req, res) => {
       })
 
     })
-  })
-
-  
+  }) 
 });
 
 app.post("/signin", (req, res) => {
