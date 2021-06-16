@@ -19,8 +19,6 @@ const knex = require('knex')({
 app.use(express.json());
 app.use(cors());
 
-const PORT = 3001;
-
 
 app.get("/", (req, res) => {
   res.status(200).send(knex.users);
@@ -30,7 +28,6 @@ app.post("/register", (req, res) => {
   const { email, name, password } = req.body;
 
   const saltRounds = 10;
-  // let hash = bcrypt.hash(password);
 
   bcrypt.genSalt(saltRounds, (err, salt) => {
     bcrypt.hash(password, salt, (err, hash) => {
@@ -100,8 +97,8 @@ app.get("/profile/:id", (req, res) => {
  
 });
 
-app.listen(PORT, () => {
-  console.log(`listening to ${PORT}`);
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`listening to ${process.env.PORT}`);
 });
 
 // /signin route --> POST -> succes || fail
