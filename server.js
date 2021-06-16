@@ -21,7 +21,9 @@ app.use(cors());
 
 
 app.get("/", (req, res) => {
-  res.status(200).send(knex.users);
+  // res.status(200).send(knex.users);
+    res.status(200).send("it is working!");
+
 });
 
 app.post("/register", (req, res) => {
