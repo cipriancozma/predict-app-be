@@ -13,10 +13,11 @@ const app = express();
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host : 'postgresql-acute-94496',
-    user : 'ciprian',
-    password : 'admin',
-    database : 'predict-app'
+    host : process.env.DATABASE_URL,
+    ssl: true
+    // user : 'ciprian',
+    // password : 'admin',
+    // database : 'predict-app'
   }
 });
 
